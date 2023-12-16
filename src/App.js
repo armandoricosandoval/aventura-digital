@@ -1,6 +1,7 @@
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import AppRputers from './routers/AppRputers'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import AppRputers from './routers/AppRputers';
 
 const App = () => {
   return (

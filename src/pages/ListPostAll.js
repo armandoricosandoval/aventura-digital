@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import '../styles/styles.css';
 
@@ -8,7 +7,7 @@ import { Link } from 'react-router-dom';
 const ListPostAll = () => {
       const [data, setData] = useState([])
     
-      useEffect(() => {
+  /*     useEffect(() => {
             axios.get(process.env.REACT_APP_URL_ALL_POST, {
                   headers: {
                         'app-id': process.env.REACT_APP_KEY
@@ -18,7 +17,7 @@ const ListPostAll = () => {
                   setData(data.data)
             })
                   .catch(err => console.log(err));
-      }, [])
+      }, []) */
 
 
       return (

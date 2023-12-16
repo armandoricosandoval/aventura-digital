@@ -1,38 +1,35 @@
 import React, { useRef, useState } from "react"
 import { Alert, Button, Card, Container, Form } from "react-bootstrap"
-//import { useAuth } from "../firebase/contexts/AuthContext"
 import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../firebase/contexts/AuthContext"
 
 export default function Signup() {
-  const emailRef = useRef()
- 
+  const emailRef = useRef() 
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
-  //const { signup } = useAuth()
+  const { signup } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useNavigate()
 
   async function handleSubmit(e) {
-    /* e.preventDefault()
+    e.preventDefault()
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match")
     }
-
-  
+ 
       setError("")
       setLoading(true)
-      await signup(emailRef.current.value, passwordRef.current.value)
+     await signup(emailRef.current.value, passwordRef.current.value)
       .then(res=>{
         history("/login")
       })
       .catch(err=>{
         setError("error",err)
         console.log(err)
-      })
+      }) 
    
-       */
     setLoading(false)
   }
 

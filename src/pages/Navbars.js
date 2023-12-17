@@ -5,7 +5,6 @@ import { useAuth } from "../firebase/contexts/AuthContext";
 export default function Navbars() {
   const { logout } = useAuth();
   const login = localStorage.getItem("user");
-  console.log("login :", login);
 
   const logoutSesion = () => {
     localStorage.clear();

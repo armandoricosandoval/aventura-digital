@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Alert, Button, Card, Form } from "react-bootstrap";
+import { Alert, Button, Card, Container, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../firebase/contexts/AuthContext";
 
@@ -32,9 +32,9 @@ export default function ForgotPassword() {
   }
 
   return (
-    <>
+    <Container className="login-back">
       <Card className='mt-4'>
-        <Card.Body>
+        <Card.Body className="login-box">
           <h2 className="text-center mb-4">Password Reset</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           {message && <Alert variant="success">{message}</Alert>}
@@ -48,13 +48,13 @@ export default function ForgotPassword() {
             </Button>
           </Form>
           <div className="w-100 text-center mt-3">
-            <Link to="/login">Login</Link>
+            <Link to="/">Login</Link>
           </div>
+      <div className="w-100 text-center mt-2">
+        Need an account? <Link to="/">Sign Up</Link>
+      </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
-      </div>
-    </>
+    </Container>
   )
 }

@@ -27,7 +27,7 @@ const ListAll = (props) => {
 
   return (
     <Container>
-      <Row className="mt-4">
+      <Row className="">
         <Col xs={12} className="text-center">
           <img
             src="/img/male_avatar.svg"

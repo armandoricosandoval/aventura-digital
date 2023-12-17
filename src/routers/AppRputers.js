@@ -5,10 +5,8 @@ import ForgotPassword from "../pages/ForgotPassword";
 import Home from "../pages/Home";
 import ListAll from "../pages/ListAll";
 import ListPostAll from "../pages/ListPostAll";
-import Login from "../pages/Login";
 import Navbars from "../pages/Navbars";
 import NotFoundPage from "../pages/NotPages";
-import Signup from "../pages/Signup";
 
 
 const AppRputers = () => {
@@ -16,9 +14,7 @@ const AppRputers = () => {
     <>
       <Navbars />
       <Routes>
-        <Route exact path="/home" element={<Home />} />
-        <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/" element={<Login />} />
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/forgot-password" element={<ForgotPassword />} />
         <Route exact path="/ListAll" element={<ListAll />} />
         <Route exact path="/ListPostAll" element={<ListPostAll />} />

@@ -1,26 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import Login from './Login';
+import Signup from './Signup';
 
 const Home = () => {
-      console.log('entroa home');
+  const [login, setLogin] = useState(true);
+
   return (
-      <Container>
-      <Row className="mt-5">
-        <Col xs={{span:'12'}} md={{span:6}} className='mb-5'>
-             <h2>Bienvenid@ a Prueba tecnica</h2> 
-             <p>¡Aquí podras Revisar el contenido de la prueba!</p>
-             <p>Armando Rico Sandoval</p>
-             <div>
-                   <Link to='/login'>Ingresa</Link>                   
-             </div>
+    <Container>
+      <Row className='my-auto'>
+        <Col xs={{ span: '12' }} md={{ span: 6 }} className=''>
+          <h2 className='mt-2'>Bienvenid@ a Prueba tecnica</h2>
+          <p>¡Aquí podras Revisar el contenido de la prueba!</p>
+          <p>Armando Rico Sandoval</p>
+          <img
+            className='img-fluid'
+            src="/img/task-manager.svg"
+            alt="Bienvenido" />
+          <p>¡Gestiona tu tiempo,Mejora tu productividad!</p>
         </Col>
-        <Col>
-        <img 
-              className='img-fluid' 
-              src="/img/task-manager.svg" 
-              alt="Bienvenido" />
-              <p>¡Gestiona tu tiempo,Mejora tu productividad!</p>
+        <Col >
+          {login ? <Login state={setLogin}/> : <Signup state={setLogin}/>}
         </Col>
       </Row>
     </Container>

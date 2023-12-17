@@ -12,8 +12,10 @@ export function useAuth() {
 export function AuthProvider({ children }) {
 
   const [currentUser, setCurrentUser] = useState();
+  console.log('currentUser :', currentUser);
   const [loading, setLoading] = useState(true);
   const auth = getAuth();  
+  const isLogged  = ()=> !!currentUser;
   
 
   function signup(email, password) {  
@@ -57,6 +59,7 @@ export function AuthProvider({ children }) {
     resetPassword,
     updateEmail,
     updatePassword,
+    isLogged
   };
 
   return (

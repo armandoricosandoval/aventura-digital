@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react"
 import { Alert, Button, Card, Container, Form } from "react-bootstrap"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useAuth } from "../firebase/contexts/AuthContext"
 
-export default function Signup() {
+export default function Signup({state}) {
   const emailRef = useRef() 
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
@@ -34,10 +34,10 @@ export default function Signup() {
   }
 
   return (
-    <Container >
-      <Card className='mt-4'>
-        <Card.Body>
-          <h2 className="text-center mb-4">Sign Up</h2>
+    <Container className="login-back">
+      <Card>
+        <Card.Body  className="login-box">
+          <h2 className="text-center mb-4 textbox">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>          
             <Form.Group id="email">
@@ -52,15 +52,15 @@ export default function Signup() {
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="w-100 mt-5" type="submit">
               Sign Up
             </Button>
           </Form>
+      <div className="w-100 text-center mt-2">
+        Already have an account? <Button variant="link" onClick={()=>state(true)}>Log In</Button>
+      </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
-      </div>
     </Container >
   )
 }

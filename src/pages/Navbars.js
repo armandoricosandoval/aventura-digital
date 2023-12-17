@@ -11,24 +11,35 @@ export default function Navbars() {
     logout();
   };
 
+ 
   return (
     <>
-      {
-        login && (
-          <Navbar bg="primary" variant="dark">
-            <Container>
-              <Navbar.Brand href="/">ARMANDO RICO</Navbar.Brand>
-              <Nav className="me-auto">
-                <Nav.Link href="/ListPostAll">LISTA POST</Nav.Link>
-                <Nav.Link href="/ListAll">LISTA USERS</Nav.Link>
-                <Nav.Link href="/">
-                  <div onClick={() => logoutSesion()}>SALIR</div>
+      {login && (
+        <Navbar bg="primary" variant="dark" sticky="top">
+          <Container>
+            <Navbar.Brand>
+              <Navbar.Toggle />
+              <Navbar.Brand>Armando Rico Photos</Navbar.Brand>
+            </Navbar.Brand>
+            <Navbar.Collapse>
+              <Nav pullRight>
+                <Nav.Link href="/home" className="text-center" active>
+                  Home
+                </Nav.Link>
+                <Nav.Link href="/perfil" className="text-center">
+                  Mi Perfil
+                </Nav.Link>
+                <Nav.Link href="/contact" className="text-center">
+                  Contact
                 </Nav.Link>
               </Nav>
-            </Container>
-          </Navbar>
-        ) 
-      }
+            </Navbar.Collapse>
+            <Nav.Link href="/">
+              <div onClick={() => logoutSesion()}>SALIR</div>
+            </Nav.Link>
+          </Container>
+        </Navbar>
+      )}
     </>
-  )
+  );
 }

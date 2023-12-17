@@ -60,3 +60,11 @@
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.3); 
 }
+
+.google-plus {
+  background: #e9544f; 
+  &:hover {
+    background: rgba(#e9544f, 0.8);
+  }
+}
+

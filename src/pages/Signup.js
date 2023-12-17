@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react"
 import { Alert, Button, Card, Container, Form } from "react-bootstrap"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../firebase/contexts/AuthContext"
 
-export default function Signup({state}) {
+export default function Signup() {
   const emailRef = useRef() 
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
@@ -57,7 +57,7 @@ export default function Signup({state}) {
             </Button>
           </Form>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Button variant="link" onClick={()=>state(true)}>Log In</Button>
+        Already have an account? <Link to="/login">Log In</Link>
       </div>
         </Card.Body>
       </Card>

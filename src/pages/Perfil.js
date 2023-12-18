@@ -1,28 +1,35 @@
-import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import React, { useCallback, useEffect, useState } from "react";
+import { Alert, Button, Col, Container, Row } from "react-bootstrap";
 
-import axios from "axios";
+import ModalProfile from "../components/ModalProfile";
 import MyCard from "../components/MyCard";
 import "../css/perfil.css";
+import { useAuth } from "../firebase/contexts/AuthContext";
 import "../styles/styles.css";
 
 const Perfil = () => {
+  const [show, setShow] = useState(false);
   const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
   const login = localStorage.getItem("user");
- 
+  const { getImagesUser } = useAuth();
+
+  const getDataUsers = useCallback(async () => {
+    await getImagesUser().then((result) => {
+      setData(result)
+    }).catch((err) => {
+      setError(err)
+    });
+  }, [getImagesUser])
 
   useEffect(() => {
-    axios
-      .get("https://picsum.photos/v2/list?page=2&limit=10")
-      .then((data) => {
-        setData(data.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    getDataUsers()
+  }, [getDataUsers,show]);
 
   return (
     <Container>
       <Row className=" mt-5">
+        {error && <Alert variant="danger">{error}</Alert>}
         <div className="container-profile">
           <h1>Bienvenid@ {login}</h1>
           <img
@@ -31,23 +38,23 @@ const Perfil = () => {
             alt="Photographer"
           />
           <p>
-            Build responsive, mobile-first projects on the web with the world's
-            most popular front-end component library. Bootstrap is an open
-            source toolkit for developing with HTML, CSS, and JS. Quickly
-            prototype your ideas or build your entire app with our Sass
-            variables and mixins, responsive grid system, extensive prebuilt
-            components, and powerful plugins built on jQuery.
+            Descubre un mundo lleno de momentos especiales por capturar y
+            compartir. En esta plataforma interactiva, cada experiencia se
+            convierte en un recuerdo que vale la pena compartir. Únete a
+            nuestra comunidad, conecta con otros aventureros digitales y
+            celebremos juntos cada momento. ¡Bienvenido a bordo para vivir y
+            compartir esta emocionante experiencia!
           </p>
           <p>
-            <Button>Subir Foto &raquo;</Button>
+            <Button onClick={() => setShow(true)}>Subir Foto &raquo;</Button>
           </p>
         </div>
       </Row>
       <div className="mt-5"></div>
       <Row>
         <h2 className="text-center">Mis Imagenes</h2>
-        {data.length > 0 &&
-          data.map((item, index) => {
+        {data?.images?.length > 0 &&
+          data?.images.map((item, index) => {
             return (
               <Col key={index} sm={4}>
                 <MyCard photo={item} />
@@ -55,6 +62,7 @@ const Perfil = () => {
             );
           })}
       </Row>
+      <ModalProfile show={show} setShow={setShow} />
     </Container>
   );
 };

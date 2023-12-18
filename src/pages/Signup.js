@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react"
 import { Alert, Button, Card, Container, Form } from "react-bootstrap"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useAuth } from "../firebase/contexts/AuthContext"
 
 export default function Signup() {
@@ -9,25 +9,23 @@ export default function Signup() {
   const passwordConfirmRef = useRef()
   const { signup } = useAuth()
   const [error, setError] = useState("")
+  const [succes,setSucces] = useState("")
   const [loading, setLoading] = useState(false)
-  const history = useNavigate()
 
   async function handleSubmit(e) {
     e.preventDefault()
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match")
-    }
- 
+    } 
       setError("")
       setLoading(true)
      await signup(emailRef.current.value, passwordRef.current.value)
       .then(res=>{
-        history("/login")
+       setSucces("Felicitaciones Ahora tienes una cuenta , Dirigete a Login")
       })
       .catch(err=>{
         setError("error",err)
-        console.log(err)
       }) 
    
     setLoading(false)
@@ -39,6 +37,7 @@ export default function Signup() {
         <Card.Body  className="login-box">
           <h2 className="text-center mb-4 textbox">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
+          {succes && <Alert variant="success">{succes}</Alert>}
           <Form onSubmit={handleSubmit}>          
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>

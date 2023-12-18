@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import ConsultItem from "../pages/ConsultItem";
+import Count from "../pages/Count";
 import ForgotPassword from "../pages/ForgotPassword";
 import Home from "../pages/Home";
 import HomeAnventure from "../pages/HomeAventure";
@@ -22,7 +22,7 @@ const AppRputers = () => {
         <Route exact path="/forgot-password" element={<ForgotPassword />} />
         <Route exact path="/home" element={<HomeAnventure />} />
         <Route exact path="/perfil" element={<Perfil />} />
-        <Route exact path="/item/:id" element={<ConsultItem />} />
+        <Route exact path="/contact" element={<Count />} />
         <Route path="*" element={<NotFoundPage/>} />
       </Routes>
     </>

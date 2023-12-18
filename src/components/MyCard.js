@@ -6,9 +6,9 @@ const MyCard = ({photo}) => {
       <Card className='mycard'>
         <Card.Img
           variant="top"
-          src={photo.download_url}
-          alt={photo.author}
-          className="img-thumbnail img-responsive"
+          src={photo}
+          alt={photo}
+          className="mycard-image"
         />
       </Card>
    

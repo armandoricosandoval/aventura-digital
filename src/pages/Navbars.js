@@ -1,28 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuth } from "../firebase/contexts/AuthContext";
 
-export default function Navbars() {
+ const Navbars=()=> {
   const { logout } = useAuth();
-  const login = localStorage.getItem("user");
+  const [login,setLogin] = useState("")
 
   const logoutSesion = () => {
     localStorage.clear();
     logout();
   };
 
+  useEffect(() => {
+    setLogin(localStorage.getItem("user"))
+  }, []);
  
   return (
     <>
       {login && (
-        <Navbar bg="primary" variant="dark" sticky="top">
+        <Navbar className="bg-body-tertiary" sticky="top" >
           <Container>
             <Navbar.Brand>
               <Navbar.Toggle />
               <Navbar.Brand>Armando Rico Photos</Navbar.Brand>
             </Navbar.Brand>
             <Navbar.Collapse>
-              <Nav pullRight>
+              <Nav>
                 <Nav.Link href="/home" className="text-center" active>
                   Home
                 </Nav.Link>
@@ -35,7 +38,7 @@ export default function Navbars() {
               </Nav>
             </Navbar.Collapse>
             <Nav.Link href="/">
-              <div onClick={() => logoutSesion()}>SALIR</div>
+              <div className="text-center" onClick={() => logoutSesion()}>SALIR</div>
             </Nav.Link>
           </Container>
         </Navbar>
@@ -43,3 +46,5 @@ export default function Navbars() {
     </>
   );
 }
+
+export default Navbars

@@ -38,7 +38,7 @@ const Login = ({ state }) => {
         localStorage.setItem("userinfo", res.user.UserImpl);
         localStorage.setItem("user", JSON.stringify(res.user.email));
         localStorage.setItem("token", JSON.stringify(res.user.accessToken));
-        history("/perfil");
+        history("/home");
     }).catch((err) => {
       setError("Failed to log in");
       logout()
@@ -64,10 +64,10 @@ const Login = ({ state }) => {
               Log In
             </Button>
           </Form>
-          <button className="google-plus w-100 mt-4" onClick={()=>loginByGoogle()}>
+          <Button variant="danger" className="google-plus w-100 mt-4" onClick={()=>loginByGoogle()}>
             <i className="fa fa-google-plus fa-lg"></i>
-            log in with Google
-          </button>
+            logIn with Google
+          </Button>
           <div className="w-100 text-center mt-3">
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>

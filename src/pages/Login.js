@@ -22,13 +22,13 @@ const Login = ({ state }) => {
         localStorage.setItem("userinfo", JSON.stringify(res.user));
         localStorage.setItem("user", JSON.stringify(res.user.email));
         localStorage.setItem("token", JSON.stringify(res.user.accessToken));
-        
+        history("/home");
       })
       .catch((err) => {
         setError("Failed to log in");
         history("/login");
       });
-      history("/perfil");
+      
     setLoading(false);
   }
 

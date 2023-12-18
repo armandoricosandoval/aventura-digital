@@ -34,7 +34,7 @@ const Perfil = () => {
           <h1>Bienvenid@ {login}</h1>
           <img
             className="img-responsive float-right"
-            src="/img/project-default.svg"
+            src="https://fastly.picsum.photos/id/91/3504/2336.jpg?hmac=tK6z7RReLgUlCuf4flDKeg57o6CUAbgklgLsGL0UowU"
             alt="Photographer"
           />
           <p>

@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuth } from "../firebase/contexts/AuthContext";
 
  const Navbars=()=> {
   const { logout } = useAuth();
-  const [login,setLogin] = useState("")
+  const { currentUser } = useAuth();
 
   const logoutSesion = () => {
     localStorage.clear();
     logout();
   };
 
-  useEffect(() => {
-    setLogin(localStorage.getItem("user"))
-  }, []);
  
   return (
     <>
-      {login && (
+      {currentUser && (
         <Navbar className="bg-body-tertiary" sticky="top" >
           <Container>
             <Navbar.Brand>

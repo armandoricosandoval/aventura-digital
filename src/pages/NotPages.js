@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const NotFoundPage = () => {
@@ -8,7 +8,7 @@ const NotFoundPage = () => {
         <Col md={{span:6, offset: 3}} className="text-center">
             <img 
             style={{width:'100%'}}
-            src="/img/404-not-found.svg"
+            src={process.env.PUBLIC_URL +"/img/404-not-found.svg"}
             alt="error 404" />
             <h2>¿Entraste a una ruta invalida?</h2>
         <p> Vuelve al <Link to='/'>Inicio</Link></p>

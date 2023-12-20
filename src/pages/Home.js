@@ -18,7 +18,7 @@ const Home = () => {
       <Col>
       <img 
             className='img-fluid' 
-            src="/img/task-manager.svg" 
+            src={process.env.PUBLIC_URL + "/img/task-manager.svg" }
             alt="Bienvenido" />
             <p>¡Gestiona tu tiempo,Mejora tu productividad!</p>
       </Col>

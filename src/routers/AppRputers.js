@@ -16,13 +16,13 @@ const AppRputers = () => {
     <>
       <Navbars />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/forgot-password" element={<ForgotPassword />} />
-        <Route exact path="/home" element={<HomeAnventure />} />
-        <Route exact path="/perfil" element={<Perfil />} />
-        <Route exact path="/contact" element={<Count />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/home" element={<HomeAnventure />} />
+        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/contact" element={<Count />} />
         <Route path="*" element={<NotFoundPage/>} />
       </Routes>
     </>

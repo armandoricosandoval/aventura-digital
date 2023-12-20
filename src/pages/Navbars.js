@@ -1,8 +1,9 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useAuth } from "../firebase/contexts/AuthContext";
 
- const Navbars=()=> {
+const Navbars = () => {
   const { logout } = useAuth();
   const { currentUser } = useAuth();
 
@@ -11,7 +12,7 @@ import { useAuth } from "../firebase/contexts/AuthContext";
     logout();
   };
 
- 
+
   return (
     <>
       {currentUser && (
@@ -23,15 +24,15 @@ import { useAuth } from "../firebase/contexts/AuthContext";
             </Navbar.Brand>
             <Navbar.Collapse>
               <Nav>
-                <Nav.Link href="/home" className="text-center" active>
+                <Link to="/" className="nav-link">
                   Home
-                </Nav.Link>
-                <Nav.Link href="/perfil" className="text-center">
+                </Link>
+                <Link to="/perfil" className="nav-link">
                   Mi Perfil
-                </Nav.Link>
-                <Nav.Link href="/contact" className="text-center">
+                </Link>
+                <Link to="/contact" className="nav-link">
                   Contact
-                </Nav.Link>
+                </Link>
               </Nav>
             </Navbar.Collapse>
             <Nav.Link href="/">

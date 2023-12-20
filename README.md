@@ -11,3 +11,6 @@ En la carpeta del proyecto, instala las dependencias: npm install
 Ejecuta la aplicación localmente: npm start
 
 se eligió Firebase como plataforma debido a su combinación de facilidad de uso, seguridad, escalabilidad y capacidad de integración con React, lo que permite centrarse en el desarrollo de funcionalidades clave y la mejora de la experiencia del usuario
+
+
+https://armandoricosandoval.github.io/aventura-digital/

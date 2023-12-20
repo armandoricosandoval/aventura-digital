@@ -35,9 +35,9 @@ const Navbars = () => {
                 </Link>
               </Nav>
             </Navbar.Collapse>
-            <Nav.Link href="/">
+            <Link to="/login" className="nav-link">
               <div className="text-center" onClick={() => logoutSesion()}>SALIR</div>
-            </Nav.Link>
+            </Link>
           </Container>
         </Navbar>
       )}

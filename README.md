@@ -7,3 +7,5 @@ Aquí, cada interacción es una oportunidad para crear recuerdos inolvidables. E
 No importa si eres un apasionado de la fotografía, un viajero incansable o simplemente alguien que ama capturar lo especial de cada día, ¡este es tu espacio! Siente la libertad de expresarte, de conectar con otros usuarios y de compartir tus historias con una comunidad que valora cada detalle.
 
 ¿Qué esperas? Emprende esta aventura digital con nosotros y haz de cada momento una experiencia para recordar y compartir. ¡Bienvenido a bordo!
+
+https://armandoricosandoval.github.io/aventura-digital/

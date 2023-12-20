@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/aventura-digital/static/css/main.ef2f7f8c.css",
-    "main.js": "/aventura-digital/static/js/main.e663d313.js",
+    "main.js": "/aventura-digital/static/js/main.f139cdeb.js",
     "static/js/787.0ab7fd53.chunk.js": "/aventura-digital/static/js/787.0ab7fd53.chunk.js",
     "static/media/banner.jpg": "/aventura-digital/static/media/banner.2a319ee37de9a81fb265.jpg",
     "index.html": "/aventura-digital/index.html",
     "main.ef2f7f8c.css.map": "/aventura-digital/static/css/main.ef2f7f8c.css.map",
-    "main.e663d313.js.map": "/aventura-digital/static/js/main.e663d313.js.map",
+    "main.f139cdeb.js.map": "/aventura-digital/static/js/main.f139cdeb.js.map",
     "787.0ab7fd53.chunk.js.map": "/aventura-digital/static/js/787.0ab7fd53.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ef2f7f8c.css",
-    "static/js/main.e663d313.js"
+    "static/js/main.f139cdeb.js"
   ]
 }
